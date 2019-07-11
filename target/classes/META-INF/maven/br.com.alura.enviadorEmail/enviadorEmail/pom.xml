@@ -6,7 +6,6 @@
 	<artifactId>enviadorEmail</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>enviadorEmail</name>
-	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,8 +37,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<classifier>exec</classifier>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

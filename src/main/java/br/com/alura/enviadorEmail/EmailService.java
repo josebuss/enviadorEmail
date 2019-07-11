@@ -10,15 +10,18 @@ import org.springframework.stereotype.Service;
 public class EmailService {
     
 	
+	private static final String PASSWORD = "jose26011993";
+	private static final String JOSECARLOSBUSS_GMAIL_COM = "josecarlosbuss@gmail.com";
+
 	public void enviar(String nome, String emailConvidado){
         try {
             Email email = new SimpleEmail();
             email.setHostName("smtp.googlemail.com");
-            email.setSmtpPort(465);
-            email.setAuthenticator(new DefaultAuthenticator("email", "password"));
+            email.setSmtpPort(587);
+            email.setAuthenticator(new DefaultAuthenticator(JOSECARLOSBUSS_GMAIL_COM, PASSWORD));
             email.setSSLOnConnect(true);
 
-            email.setFrom("email");
+            email.setFrom(JOSECARLOSBUSS_GMAIL_COM);
             email.setSubject("Você foi convidado pelo ListaVIP");
             email.setMsg("Olá " + nome + ". Você acaba de ser convidado pelo ListaVIP.");
             email.addTo(emailConvidado);
